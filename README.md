@@ -1,46 +1,86 @@
-# Getting Started with Create React App
+# Gerenciador de Tarefas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição
 
-## Available Scripts
+O "Gerenciador de Tarefas" é uma aplicação frontend desenvolvida em React, projetada para gerenciar tarefas de maneira eficiente e intuitiva. A aplicação contém quatro páginas internas para diferentes modos de visualização de tarefas e duas páginas externas para registro e login de usuários. Utiliza Firebase Storage para autenticação e armazenamento de dados, mas pode ser facilmente integrada a qualquer backend ou banco de dados.
 
-In the project directory, you can run:
+## Funcionalidades
 
-### `npm start`
+### Páginas Internas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. **Backlog**: Exibe um datagrid listando todas as tarefas em backlog.
+2. **Matriz de Priorização**: Visualiza as tarefas em backlog e em andamento, organizadas em quatro quadrantes conforme a matriz de Eisenhower.
+3. **Kanban**: Organiza as tarefas em quatro colunas:
+    - **A fazer (To do)**
+    - **Em andamento (In Progress)**
+    - **Em análise (Review)**
+    - **Pronto (Done)**
+4. **Taréfas concluídas**: Exibe um datagrid listando todas as tarefas concluídas.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Páginas Externas
 
-### `npm test`
+1. **Registro**: Página para criação de novos usuários.
+2. **Login**: Página para autenticação de usuários existentes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Componentes Globais
 
-### `npm run build`
+- **Barra de Navegação**: Presente em todas as páginas, permite a navegação entre as seções da aplicação e inclui um botão de logout.
+- **Barra de Ações**: Disponível apenas nas páginas internas, inclui:
+    - Criação de tarefas
+    - Campo de busca para filtrar tarefas por título e responsável
+    - Exportação e importação de tarefas via CSV
+    - Botão de finalizar sprint (na página Kanban) que move todas as tarefas para a página de concluídas
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tecnologias Utilizadas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- Material-UI
+- Firebase (para autenticação e armazenamento de dados)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Configuração e Execução
 
-### `npm run eject`
+### Pré-requisitos
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Node.js
+- Conta no Firebase
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Passos para Configuração
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Clone este repositório:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    ```bash
+    git clone https://github.com/Schimith98/gerenciador-de-tarefas.git
+    cd gerenciador-de-tarefas
+    ```
 
-## Learn More
+2. Instale as dependências:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    npm install
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Crie um projeto no Firebase e obtenha as credenciais de configuração.
+
+4. Crie um arquivo `.env` na raiz do projeto e preencha com as seguintes variáveis de ambiente:
+
+    ```env
+    REACT_APP_FIREBASE_API_KEY=your-api-key
+    REACT_APP_FIREBASE_AUTH_DOMAIN=your-auth-domain
+    REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+    REACT_APP_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+    REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+    REACT_APP_FIREBASE_APP_ID=your-app-id
+    ```
+
+5. Execute a aplicação:
+
+    ```bash
+    npm start
+    ```
+
+    A aplicação estará disponível em `http://localhost:3000`.
+
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
