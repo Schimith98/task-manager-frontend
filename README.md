@@ -49,7 +49,7 @@ O "Gerenciador de Tarefas" é uma aplicação frontend desenvolvida em React, pr
 1. Clone este repositório:
 
     ```bash
-    git clone https://github.com/Schimith98/gerenciador-de-tarefas.git
+    git clone https://github.com/Schimith98/task-manager-frontend.git
     cd gerenciador-de-tarefas
     ```
 
